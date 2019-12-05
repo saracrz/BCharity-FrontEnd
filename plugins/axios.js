@@ -1,5 +1,5 @@
 import axios from 'axios'
 
 export default axios.create({
-  baseURL: 'https://reboot-nuxt-template.herokuapp.com/api/'
+  baseURL: process.env.API_URL || 'http://localhost:2222/api'
 })
