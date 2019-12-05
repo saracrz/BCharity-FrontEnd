@@ -35,13 +35,11 @@
             >
           </v-card-actions>
 
-          <v-text justify="center">
-            <p class="font-weight-light">
-              ¿Aún no tienes cuenta?
+          <p class="font-weight-light" justify="center">
+            ¿Aún no tienes cuenta?
 
-              <v-btn text to="/signup" color="#54CEC3">Regístrate</v-btn>
-            </p>
-          </v-text>
+            <v-btn text to="/signup" color="#54CEC3">Regístrate</v-btn>
+          </p>
         </v-card-text>
       </v-form>
     </v-col>
