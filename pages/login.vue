@@ -26,6 +26,7 @@
             <v-spacer></v-spacer>
             <v-btn
               id="button-login"
+              to="/infopersonal"
               center
               color="#54CEC3"
               justify="align-center"

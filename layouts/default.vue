@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar fixed app>
+    <v-app-bar fixed app color="#54CEC3">
       <v-toolbar-title class="title-font">BC</v-toolbar-title>
       <v-spacer />
       <div v-if="userName">
