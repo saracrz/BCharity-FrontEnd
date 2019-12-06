@@ -7,31 +7,10 @@
         <img src="./../assets/079801.jpg" class="pic" alt="Maria" />
       </v-avatar>
       <v-col cols="10" justify="center" class="mx-auto">
-        <v-text-field
-          v-model="name"
-          :counter="10"
-          :rules="nameRules"
-          label="Name"
-          required
-        ></v-text-field>
-        <v-text-field
-          v-model="email"
-          :rules="emailRules"
-          label="Apellido"
-          required
-        ></v-text-field>
-        <v-text-field
-          v-model="email"
-          :rules="emailRules"
-          label="Dirección - Código Postal"
-          required
-        ></v-text-field>
-        <v-text-field
-          v-model="email"
-          :rules="emailRules"
-          label="Teléfono"
-          required
-        ></v-text-field>
+        <v-text-field :counter="10" label="Name" required></v-text-field>
+        <v-text-field label="Apellido" required></v-text-field>
+        <v-text-field label="Dirección - Código Postal" required></v-text-field>
+        <v-text-field label="Teléfono" required></v-text-field>
         <v-select
           v-model="select"
           :items="Localidad"
@@ -57,6 +36,7 @@
 export default {
   data() {
     return {
+      select: '',
       Localidad: [
         'Gran Canaria',
         'Lanzarote',

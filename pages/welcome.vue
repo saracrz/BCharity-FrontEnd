@@ -10,15 +10,21 @@
       </p>
       <v-card class="mx-auto py-4 mt-8 " max-width="344">
         <v-card-actions>
-          <v-btn text color="#54CEC3" class="mx-auto">
+          <v-btn text to="/altapaciente" color="#54CEC3" class="mx-auto">
             Crear perfil de un paciente
           </v-btn>
         </v-card-actions>
       </v-card>
       <v-card class="py-4 my-3" max-width="344">
         <v-card-actions>
-          <v-btn text color="#54CEC3" justify="center" class="mx-auto">
-            Crear perfil de un paciente
+          <v-btn
+            text
+            to="/altapaciente"
+            color="#54CEC3"
+            justify="center"
+            class="mx-auto"
+          >
+            Crear perfil como voluntario
           </v-btn>
         </v-card-actions>
       </v-card>

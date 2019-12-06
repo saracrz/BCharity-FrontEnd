@@ -5,12 +5,13 @@
       <v-spacer />
       <div v-if="userName">
         Hi {{ userName }}
-        <v-btn icon>
-          <v-icon>mdi-account-circle</v-icon>
-        </v-btn>
+
         <v-btn text @click="logout">Logout</v-btn>
       </div>
-      <v-btn v-else text to="/login">Entrar</v-btn>
+      <v-app-bar-nav-icon></v-app-bar-nav-icon>
+      <v-avatar>
+        <img :src="require('~/assets/079801.jpg')" alt="John" />
+      </v-avatar>
     </v-app-bar>
 
     <v-content>
@@ -19,7 +20,7 @@
       </v-container>
     </v-content>
 
-    <v-footer fixed app class="text-center title-font">
+    <v-footer fixed app class="text-center ">
       <v-row align="center" justify="center">
         <span>&copy; 2019 - BCharity </span>
       </v-row>
