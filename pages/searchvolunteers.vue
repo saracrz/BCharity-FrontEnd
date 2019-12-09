@@ -1,6 +1,6 @@
 <template>
   <div class="mt-10">
-    <v-title class="title mx-4 mt-10">Voluntarios:</v-title>
+    <p class="title mx-4 mt-10">Voluntarios:</p>
     <Volunteer></Volunteer>
   </div>
 </template>

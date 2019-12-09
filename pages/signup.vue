@@ -1,57 +1,59 @@
 <template>
-  <v-row align="center" justify="center" class="general">
-    <v-col cols="10" offset-md="1">
-      <v-form ref="form" lazy-validation>
-        <v-card-title>
-          <h3>Registro</h3>
-        </v-card-title>
-        <v-card-text id="boxes">
-          <v-text-field
-            v-model="name"
-            label="Name"
-            outlined
-            :rules="[rules.required]"
-            validate-on-blur
-          />
+  <div>
+    <v-row align="center" justify="center" class=" general">
+      <img width="145px" class="mx-12" :src="require('~/assets/Logo.png')" />
+      <v-col cols="10" class="col-md-6">
+        <v-form ref="form" lazy-validation>
+          <v-card-title>
+            <h4 class="mx-auto">Crea una cuenta</h4>
+          </v-card-title>
+          <v-card-text>
+            <v-text-field
+              v-model="name"
+              class="font-weight-light"
+              label="Name"
+              :rules="[rules.required]"
+              validate-on-blur
+            />
+            <v-text-field
+              v-model="email"
+              class="pt-0 mt-0 font-weight-light"
+              label="E-mail"
+              :rules="[rules.required, rules.email]"
+              validate-on-blur
+            />
+            <v-text-field
+              v-model="password"
+              class="pt-0 mt-0 font-weight-light"
+              :type="showPassword ? 'text' : 'password'"
+              :rules="[rules.required, rules.password]"
+              :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+              label="Password"
+              @click:append="showPassword = !showPassword"
+            />
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn
+                id="button-register"
+                width="400px"
+                to="/infopersonal"
+                center
+                color="#54CEC3"
+                class="mr-4 white--text"
+                @click="signup"
+                >Registro</v-btn
+              >
+            </v-card-actions>
 
-          <v-text-field
-            v-model="email"
-            label="E-mail"
-            :rules="[rules.required, rules.email]"
-            outlined
-            validate-on-blur
-          />
-
-          <v-text-field
-            v-model="password"
-            :type="showPassword ? 'text' : 'password'"
-            :rules="[rules.required, rules.password]"
-            :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
-            label="Password"
-            outlined
-            @click:append="showPassword = !showPassword"
-          />
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn
-            id="button-register"
-            color="#54CEC3"
-            class="mr-4"
-            @click="signup"
-            >Registro</v-btn
-          >
-        </v-card-actions>
-        <v-text justify="center">
-          <p class="font-weight-light">
-            ¿Ya tienes una cuenta?
-
-            <v-btn text to="/login" color="#54CEC3">Inicia sesión</v-btn>
-          </p>
-        </v-text>
-      </v-form>
-    </v-col>
-  </v-row>
+            <p class="font-weight-light">
+              ¿Ya tienes una cuenta?
+              <v-btn text to="/login" color="#54CEC3">Inicia sesión</v-btn>
+            </p>
+          </v-card-text>
+        </v-form>
+      </v-col>
+    </v-row>
+  </div>
 </template>
 
 <script>
@@ -94,19 +96,15 @@ export default {
 </script>
 
 <style scoped>
+#background {
+  background-color: #54cec3;
+}
 #button-register {
   width: 300px;
   align-content: center;
 }
-.boxes {
-  margin-top: 5px;
-  padding: 0px;
-}
+
 #general {
   font-family: 'Lato', sans-serif;
-}
-#boxes {
-  margin-top: 0px;
-  flex-direction: column-reverse;
 }
 </style>

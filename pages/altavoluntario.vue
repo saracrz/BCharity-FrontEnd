@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-img height="250" :src="require('~/assets/persona-de-60.jpg')"></v-img>
+    <v-img height="250" :src="require('~/static/Carlos.jpg')"></v-img>
     <v-card id="paciente-card" class="mx-auto">
       <v-card-title>Alberto</v-card-title>
       <v-card-text>
@@ -47,17 +47,16 @@
           >
         </template>
       </v-select>
-      <v-select :items="items" label="Solo field" solo class="mx-4"></v-select>
       <v-card-actions>
         <v-spacer></v-spacer>
         <v-btn
           id="button-voluntarios"
-          to="/searchvolunteers"
+          to="/profilecreated"
           center
           color="#54CEC3"
           justify="align-center"
           class="mx-auto mr-8 my-6 white--text"
-          >Ver Voluntarios</v-btn
+          >Guardar</v-btn
         >
       </v-card-actions>
     </v-card>

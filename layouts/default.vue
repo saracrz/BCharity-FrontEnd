@@ -1,7 +1,7 @@
 <template>
   <v-app>
-    <v-app-bar fixed app color="#54CEC3">
-      <v-toolbar-title class="title-font">BC</v-toolbar-title>
+    <v-app-bar :elevation="1" fixed app>
+      <v-btn text to="/login" class="body-2">BCharity</v-btn>
       <v-spacer />
       <div v-if="userName">
         Hi {{ userName }}
@@ -22,7 +22,7 @@
 
     <v-footer fixed app class="text-center ">
       <v-row align="center" justify="center">
-        <span>&copy; 2019 - BCharity </span>
+        <span> BCharity </span>
       </v-row>
     </v-footer>
   </v-app>

@@ -1,12 +1,12 @@
 export const state = () => ({
   token: '',
-  username: '',
+  userName: '',
   email: ''
 })
 
 export const getters = {
   userName(state) {
-    return state.username
+    return state.userName
   }
 }
 export const mutations = {
