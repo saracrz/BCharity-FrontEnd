@@ -9,6 +9,7 @@
 
         <v-spacer></v-spacer>
         <v-text-field
+          v-model="newUser.name"
           color="#54CEC3"
           class="mt-0 pt-0"
           placeholder="Lily"
@@ -17,6 +18,7 @@
           required
         ></v-text-field>
         <v-text-field
+          v-model="newUser.apellido"
           label="Apellido"
           loader-height="1"
           class="mt-0 pt-0 caption"
@@ -25,13 +27,14 @@
           outlined
         ></v-text-field>
         <v-text-field
+          v-model="newUser.phone"
           label="Teléfono"
           placeholder="686-333-988"
           color="#54CEC3"
           outlined
         ></v-text-field>
         <v-select
-          v-model="select"
+          v-model="newUser.address"
           color="#54CEC3"
           class="mt-0 pt-0"
           placeholder="Díaz"
@@ -41,6 +44,7 @@
           label="Localidad"
         ></v-select>
         <v-file-input
+          v-model="newUser.photoDNI"
           class="my-0"
           label="Adjuntar copia DNI"
           color="#54CEC3"
@@ -61,10 +65,17 @@
 </template>
 
 <script>
+import axios from '~/plugins/axios'
 export default {
   data() {
     return {
-      select: '',
+      newUser: {
+        name: '',
+        apellido: '',
+        phone: '',
+        photoDNI: null,
+        address: ''
+      },
       Localidad: [
         'Gran Canaria',
         'Lanzarote',
@@ -74,6 +85,17 @@ export default {
         'El Hierro',
         'La Gomera'
       ]
+    }
+  },
+  method: {
+    createUser() {
+      axios
+        .post('/users', this.newUser)
+        .then(response => response.data)
+        .then(user => {
+          console.log({ user })
+          this.$router.push('/welcome')
+        })
     }
   }
 }

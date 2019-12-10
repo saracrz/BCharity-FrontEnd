@@ -5,19 +5,16 @@
     </p>
     <v-img height="300" :src="require('~/static/Carlos.jpg')"></v-img>
 
-    <v-card-title class="mb-0">Carlos</v-card-title>
+    <v-card-title class="mb-0"></v-card-title>
     <v-card-text>
       <v-row align="center" class="mx-0"> </v-row>
 
       <div color="#54CEC3" class="subtitle-2 mb-4 ">
-        Gran Canaria
+        {{ volunteer.lugar }}
       </div>
       <p>
-        Carlos es ingeniero de software y trabaja como Full Stack Developer en
-        Las Palmas. Le gusta ir al cine, hacer deporte y el piragüísmo. Ha
-        viajado como voluntario por muchos países (Asia y Sudamérica) trabajando
-        en proyectos de colaboración humanitaria. Le encantaría ayudar a
-        personas que necesiten de su compañía.
+        {{ volunteer.description }}
+        {{ volunteer.experience }}
       </p>
     </v-card-text>
 
@@ -53,8 +50,20 @@ export default {
   data() {
     return {
       dialog: false,
-      value: ''
+      value: '',
+      volunteer: {
+        dias: '',
+        description: '',
+        photoURL: '',
+        lugar: ''
+      }
     }
+  },
+  created() {
+    this.$axios
+      .get('http://localhost:2222/api/volunteers/' + this.$route.params.id)
+      .then(res => res.data)
+      .then(volunteer => (this.volunteer = volunteer))
   }
 }
 </script>

@@ -22,10 +22,10 @@
       <v-card-title class="subtitle-1">Disponibilidad:</v-card-title>
       <v-select
         id="selects"
-        v-model="valor"
+        v-model="daysSelected"
         class="mx-4 font-weight-thin"
         outlined
-        :items="items"
+        :items="days"
         label="Selecciona los días"
         multiple
       >
@@ -40,7 +40,8 @@
       </v-select>
       <v-select
         id="selects"
-        :items="items"
+        v-model="timeSelected"
+        :items="horarios"
         label="Horario"
         outlined
         class="mx-4 my-0 pt-0"
@@ -49,11 +50,11 @@
         <v-spacer></v-spacer>
         <v-btn
           id="button-voluntarios"
-          to="/searchvolunteers"
           center
           color="#54CEC3"
           justify="align-center"
           class="mx-auto mr-8 my-6 white--text"
+          @click="saveQuery()"
           >Ver Voluntarios</v-btn
         >
       </v-card-actions>
@@ -67,7 +68,7 @@ export default {
     rules: [v => v.length <= 150 || 'Max 150 characters'],
     value:
       'A Alberto le gusta hablar de cine , salir a dar un paseo, jugar a dominó y que le enseñen a utilizar nuevas tecnologías.',
-    items: [
+    days: [
       'Lunes',
       'Martes',
       'Miércoles',
@@ -76,8 +77,19 @@ export default {
       'Sábado',
       'Domingo'
     ],
-    valor: ['Tarde', 'Mañana']
-  })
+    daysSelected: [],
+    horarios: ['Mañana', 'Tarde'],
+    timeSelected: []
+  }),
+  methods: {
+    saveQuery() {
+      this.$store.commit('saveQuery', {
+        daysSelected: this.daysSelected,
+        timeSelected: this.timeSelected
+      })
+      this.$router.push('/searchvolunteers')
+    }
+  }
 }
 </script>
 

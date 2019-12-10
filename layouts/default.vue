@@ -1,8 +1,8 @@
 <template>
   <v-app>
     <v-app-bar :elevation="1" fixed app color="#54CEC3">
-      <i class="fas fa-chevron-left"></i>
-      <nuxt-link to="/login" class="logo ml-2">
+      <i class="fas fa-chevron-left" @click="goBack()"></i>
+      <nuxt-link to="/welcome" class="logo ml-2">
         bcharity
       </nuxt-link>
       <v-spacer />
@@ -40,6 +40,9 @@ export default {
   methods: {
     logout() {
       this.$store.commit('clearToken')
+    },
+    goBack() {
+      this.$router.go(-1)
     }
   }
 }

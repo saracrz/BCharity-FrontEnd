@@ -28,7 +28,6 @@
             <v-spacer></v-spacer>
             <v-btn
               id="button-login"
-              to="/infopersonal"
               center
               color="#54CEC3"
               justify="align-center"
@@ -77,7 +76,7 @@ export default {
       const newToken = await axios.post('auth/login', user)
       if (!newToken.data.error) {
         this.$store.commit('saveToken', newToken.data)
-        this.$router.push('/')
+        this.$router.push('/infopersonal')
       } else {
         alert(newToken.data.error)
       }

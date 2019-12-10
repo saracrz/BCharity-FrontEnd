@@ -3,10 +3,12 @@
     <v-col cols="10" class="col-md-6">
       <v-content>
         <v-container id="welcome" align="center" justify="center">
-          Bienvenida {{ userName }}
+          ¡Bienvenido a bcharity {{ userName }}!
         </v-container>
       </v-content>
-
+      <p class="text subtitle-1 mx-8 text-center">
+        Somos una fundación....
+      </p>
       <div>
         <v-spacer></v-spacer>
         <p class="mx-auto" align="center" justify="center">
@@ -48,7 +50,7 @@ export default {
 <style lang="scss" scoped>
 #welcome {
   font-family: 'Yeseva One', cursive;
-  font-size: 20px;
+  font-size: px;
 }
 #titulo {
   height: 70vh;
