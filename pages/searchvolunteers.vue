@@ -1,6 +1,8 @@
 <template>
-  <div class="mt-10">
-    <p class="title mx-4 mt-10">Voluntarios:</p>
+  <div>
+    <p class="subtitle-1 font-weight-regular mx-2 mt-2">
+      Selecciona un voluntario
+    </p>
     <Volunteer></Volunteer>
   </div>
 </template>

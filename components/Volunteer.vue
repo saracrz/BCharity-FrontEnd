@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-row dense>
-      <v-col v-for="card in cards" :key="card.title" cols="6">
+      <v-col v-for="card in cards" :key="card.title" class="mb-0" cols="6">
         <v-card>
           <v-img
             :src="card.src"
@@ -10,25 +10,10 @@
             height="200px"
           >
             <v-card-title v-text="card.title"></v-card-title>
+            <nuxt-link class="logo ml-2" to="/perfilcolaboracionvolunt">
+              Más
+            </nuxt-link>
           </v-img>
-
-          <v-card-actions>
-            <v-spacer></v-spacer>
-
-            <v-btn icon>
-              <v-icon color="#54CEC3">mdi-heart</v-icon>
-            </v-btn>
-            <v-btn
-              to="/perfilcolaboracionvolunt"
-              class="mx-2"
-              outlined
-              fab
-              x-small
-              color="#54CEC3"
-            >
-              <v-icon>mdi-plus</v-icon>
-            </v-btn>
-          </v-card-actions>
         </v-card>
       </v-col>
     </v-row>
@@ -46,10 +31,25 @@ export default {
       {
         title: 'Laura',
         src: require('~/static/Laura.jpg')
+      },
+      {
+        title: 'Marta',
+        src: require('~/static/Laura.jpg')
+      },
+      {
+        title: 'Martín',
+        src: require('~/static/Carlos.jpg')
       }
     ]
   })
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.logo {
+  color: #54cec3;
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  float: right;
+}
+</style>

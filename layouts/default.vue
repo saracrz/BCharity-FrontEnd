@@ -1,7 +1,10 @@
 <template>
   <v-app>
-    <v-app-bar :elevation="1" fixed app>
-      <v-btn text to="/login" class="body-2">BCharity</v-btn>
+    <v-app-bar :elevation="1" fixed app color="#54CEC3">
+      <i class="fas fa-chevron-left"></i>
+      <nuxt-link to="/login" class="logo ml-2">
+        bcharity
+      </nuxt-link>
       <v-spacer />
       <div v-if="userName">
         Hi {{ userName }}
@@ -10,7 +13,7 @@
       </div>
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
       <v-avatar>
-        <img :src="require('~/assets/079801.jpg')" alt="John" />
+        <img :src="require('~/assets/079801.jpg')" />
       </v-avatar>
     </v-app-bar>
 
@@ -22,7 +25,7 @@
 
     <v-footer fixed app class="text-center ">
       <v-row align="center" justify="center">
-        <span> BCharity </span>
+        <span> For a better world! </span>
       </v-row>
     </v-footer>
   </v-app>
@@ -44,6 +47,12 @@ export default {
 
 <style scoped>
 .title-font {
+  font-family: 'Yeseva One', cursive;
+}
+.logo {
+  text-decoration: none;
+  font-size: 22 px;
+  color: black;
   font-family: 'Yeseva One', cursive;
 }
 </style>

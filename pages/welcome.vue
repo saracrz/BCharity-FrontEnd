@@ -1,7 +1,7 @@
 <template>
   <v-row align="center" justify="center" class="mx-auto">
     <v-col cols="10" class="col-md-6">
-      <v-content :user-name="userName">
+      <v-content>
         <v-container id="welcome" align="center" justify="center">
           Bienvenida {{ userName }}
         </v-container>

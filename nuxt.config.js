@@ -23,7 +23,7 @@ module.exports = {
       {
         rel: 'stylesheet',
         href:
-          'https://fonts.googleapis.com/css?family=Lato|Yeseva+One&display=swap'
+          'https://fonts.googleapis.com/css?family=Lobster|Lato|Yeseva+One&display=swap'
       },
       {
         rel: 'stylesheet',

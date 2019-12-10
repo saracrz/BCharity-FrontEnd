@@ -1,10 +1,10 @@
 <template>
-  <v-row>
+  <v-row class="mt-12">
     <div
       id="colaboration"
       align="center"
       justify="center"
-      class="mx-auto mt-12"
+      class="mx-auto mt-12 "
     >
       <p>¡Propuesta enviada!</p>
     </div>
@@ -26,7 +26,10 @@ export default {}
 <style lang="scss" scoped>
 #colaboration {
   font-family: 'Yeseva One', cursive;
+  font-size: 20px;
+  color: #54cec3;
 }
+
 .text {
   font-family: 'Lato', sans-serif;
 }

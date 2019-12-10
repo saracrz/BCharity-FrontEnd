@@ -1,41 +1,32 @@
 <template>
   <div>
-    <v-img height="250" :src="require('~/assets/persona-de-60.jpg')"></v-img>
-    <v-card id="paciente-card" class="mx-auto">
-      <v-card-title>Alberto</v-card-title>
+    <div id="text">
+      <p class="subtitle-1 font-weight-regular mx-2">
+        Nuevo paciente
+      </p>
+      <v-img height="250" :src="require('~/assets/persona-de-60.jpg')"></v-img>
+
+      <v-card-title class="title ml-2">Alberto</v-card-title>
       <v-card-text>
-        <v-row align="center" class="mx-0">
-          <v-rating
-            :value="4.5"
-            color="amber"
-            dense
-            half-increments
-            readonly
-            size="14"
-          ></v-rating>
-
-          <div class="grey--text ml-4">4.5 (413)</div>
-        </v-row>
-
-        <div class="my-4 subtitle-1 black--text">
-          Gran Canaria
-        </div>
-        <v-container fluid>
+        <v-col cols="12" sm="12">
           <v-textarea
-            counter
-            label="Text"
-            :rules="rules"
+            color="#54CEC3"
+            label="Escribe una descripción"
+            resize
+            rows="2"
             :value="value"
           ></v-textarea>
-        </v-container>
+        </v-col>
       </v-card-text>
 
-      <v-card-title>Disponibilidad:</v-card-title>
+      <v-card-title class="subtitle-1">Disponibilidad:</v-card-title>
       <v-select
+        id="selects"
         v-model="valor"
-        class="mx-7"
+        class="mx-4 font-weight-thin"
+        outlined
         :items="items"
-        label="Selcciona los días"
+        label="Selecciona los días"
         multiple
       >
         <template v-slot:selection="{ item, index }">
@@ -47,7 +38,13 @@
           >
         </template>
       </v-select>
-      <v-select :items="items" label="Solo field" solo class="mx-4"></v-select>
+      <v-select
+        id="selects"
+        :items="items"
+        label="Horario"
+        outlined
+        class="mx-4 my-0 pt-0"
+      ></v-select>
       <v-card-actions>
         <v-spacer></v-spacer>
         <v-btn
@@ -60,7 +57,7 @@
           >Ver Voluntarios</v-btn
         >
       </v-card-actions>
-    </v-card>
+    </div>
   </div>
 </template>
 
@@ -79,7 +76,7 @@ export default {
       'Sábado',
       'Domingo'
     ],
-    valor: ['Lunes', 'Martes', 'miércoles']
+    valor: ['Tarde', 'Mañana']
   })
 }
 </script>
@@ -89,7 +86,10 @@ export default {
   width: 300px;
   align-content: center;
 }
-// #paciente-card {
-//   border-radius: 30px 30px 0 0;
-// }
+#text {
+  font-family: 'Lato', sans-serif;
+}
+#selects {
+  display: flexbox;
+}
 </style>

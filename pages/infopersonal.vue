@@ -1,13 +1,14 @@
 <template>
   <div>
     <v-row class="form mx-auto ">
-      <p class="title ml-12 my-2 mb-8">Información personal</p>
-      <v-avatar class=" ml-8">
-        <img src="./../assets/079801.jpg" class="pic" alt="Maria" />
-      </v-avatar>
-      <v-col cols="10" justify="center" class="mx-auto font-weight-light">
+      <p class="subtitle-1 mx-auto  my-2 mb-8">Información personal</p>
+      <v-col cols="11" justify="center" class="mx-auto font-weight-light">
+        <v-avatar class=" ml-4">
+          <img src="./../assets/079801.jpg" class="pic mb-10" alt="Maria" />
+        </v-avatar>
+
+        <v-spacer></v-spacer>
         <v-text-field
-          dense
           color="#54CEC3"
           class="mt-0 pt-0"
           placeholder="Lily"
@@ -16,7 +17,6 @@
           required
         ></v-text-field>
         <v-text-field
-          dense
           label="Apellido"
           loader-height="1"
           class="mt-0 pt-0 caption"
@@ -26,7 +26,6 @@
         ></v-text-field>
         <v-text-field
           label="Teléfono"
-          dense
           placeholder="686-333-988"
           color="#54CEC3"
           outlined
@@ -36,14 +35,12 @@
           color="#54CEC3"
           class="mt-0 pt-0"
           placeholder="Díaz"
-          dense
           outlined
           :items="Localidad"
           :rules="[v => !!v || 'La localidad es obliglatoria']"
           label="Localidad"
         ></v-select>
         <v-file-input
-          dense
           class="my-0"
           label="Adjuntar copia DNI"
           color="#54CEC3"
@@ -87,7 +84,6 @@ export default {
   margin-bottom: 20px;
 }
 .form {
-  margin-top: 40px;
   font-family: 'Lato', sans-serif;
 }
 .button-continue {
