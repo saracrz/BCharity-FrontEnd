@@ -2,13 +2,8 @@
   <v-row id="background" class="pt-5px">
     <v-col cols="12" class="col-md-6 ">
       <v-col cols="12" class="col-md-8">
-        <v-content
-          id="welcome"
-          align="center"
-          justify="center"
-          style="padding: 20px"
-        >
-          <p class="mx-auto mr-2 mb-0">
+        <v-content id="welcome" align="center" justify="center">
+          <p class="mx-auto mr-8 mb-0">
             Bienvenido a BCharity
           </p>
         </v-content>
@@ -38,18 +33,18 @@
         <v-divider
           style="margin-left:80px; margin-right:80px"
           color="#54CEC3"
-          class="my-8 mb-10"
+          class="my-10"
         ></v-divider>
-        <p class="title mx-auto mt-6 mb-8" align="center" justify="center">
-          ¿Qué te gustaría hacer ahora?
+        <p class="title mx-auto mt-6" align="center" justify="center">
+          Acceder a BCharity
         </p>
       </div>
       <div class="text-center">
-        <v-btn class="ma-2" text to="/altapaciente" outlined color="#54CEC3"
-          >Alta Paciente</v-btn
+        <v-btn class="ma-2" text to="/login" outlined color="#54CEC3"
+          >Login</v-btn
         >
-        <v-btn class="ma-2" text to="/altavoluntario" outlined color="#54CEC3"
-          >Perfil Voluntario</v-btn
+        <v-btn class="ma-2" text to="/signup" outlined color="#54CEC3"
+          >Signup</v-btn
         >
       </div>
     </v-col>

@@ -19,6 +19,7 @@
         ></v-text-field>
         <v-text-field
           v-model="newUser.apellido"
+          style="padding:0px"
           label="Apellido"
           loader-height="1"
           class="mt-0 pt-0 caption"

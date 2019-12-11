@@ -1,23 +1,26 @@
 <template>
   <v-app>
-    <v-app-bar :elevation="1" fixed app>
+    <v-app-bar :elevation="1" fixed app color="#54CEC3">
       <i class="fas fa-chevron-left" @click="goBack()"></i>
       <nuxt-link text to="/welcome" class="logo ml-2">
         BCharity
       </nuxt-link>
       <v-spacer />
 
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon
+        v-if="userName"
+        @click.stop="drawer = !drawer"
+      ></v-app-bar-nav-icon>
     </v-app-bar>
 
-    <v-navigation-drawer v-model="drawer" app right>
+    <v-navigation-drawer v-if="userName" v-model="drawer" app right>
       <v-list-item>
         <v-list-item-avatar>
           <v-img :src="require('~/assets/079801.jpg')"></v-img>
         </v-list-item-avatar>
 
         <v-list-item-content>
-          <v-list-item-title v-if="userName">{{ userName }}</v-list-item-title>
+          <v-list-item-title>{{ userName }}</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
 
@@ -62,13 +65,17 @@ export default {
       drawer: false,
       items: [
         { title: 'Perfil', icon: 'mdi-account', to: '/infopersonal' },
-        { title: 'Alta paciente', icon: 'mdi-magnify', to: '/search' },
+        { title: 'Alta paciente', icon: 'mdi-magnify', to: '/altapaciente' },
         {
           title: 'Alta voluntario',
           icon: 'mdi-account-card-details',
           to: '/altavoluntario'
         },
-        { title: 'Messages', icon: 'mdi-android-messages', to: '' },
+        {
+          title: 'Messages',
+          icon: 'mdi-android-messages',
+          to: ''
+        },
         {
           title: 'Favorite Ads',
           icon: 'mdi-heart-multiple-outline',
@@ -85,6 +92,7 @@ export default {
   methods: {
     logout() {
       this.$store.commit('clearToken')
+      this.$router.push('/')
     },
     goBack() {
       this.$router.go(-1)
