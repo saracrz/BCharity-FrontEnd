@@ -2,8 +2,8 @@
   <v-app>
     <v-app-bar :elevation="1" fixed app>
       <i class="fas fa-chevron-left" @click="goBack()"></i>
-      <nuxt-link to="/welcome" class="logo ml-2">
-        bcharity
+      <nuxt-link text to="/welcome" class="logo ml-2">
+        BCharity
       </nuxt-link>
       <v-spacer />
 
@@ -24,7 +24,7 @@
       <v-divider></v-divider>
 
       <v-list dense>
-        <v-list-item v-for="item in items" :key="item.title" link>
+        <v-list-item v-for="item in items" :key="item.title" :to="item.to">
           <v-list-item-icon>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-icon>
@@ -62,8 +62,12 @@ export default {
       drawer: false,
       items: [
         { title: 'Perfil', icon: 'mdi-account', to: '/infopersonal' },
-        { title: 'Search Ad', icon: 'mdi-magnify', to: '/search' },
-        { title: 'My Ads', icon: 'mdi-account-card-details', to: '/my-ads' },
+        { title: 'Alta paciente', icon: 'mdi-magnify', to: '/search' },
+        {
+          title: 'Alta voluntario',
+          icon: 'mdi-account-card-details',
+          to: '/altavoluntario'
+        },
         { title: 'Messages', icon: 'mdi-android-messages', to: '' },
         {
           title: 'Favorite Ads',
