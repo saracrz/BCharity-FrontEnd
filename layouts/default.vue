@@ -9,7 +9,8 @@
 
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
     </v-app-bar>
-    <v-navigation-drawer v-model="drawer" absolute temporary>
+
+    <v-navigation-drawer v-model="drawer" app right>
       <v-list-item>
         <v-list-item-avatar>
           <v-img :src="require('~/assets/079801.jpg')"></v-img>
@@ -44,6 +45,7 @@
         <nuxt />
       </v-container>
     </v-content>
+
     <v-footer fixed app class="text-center ">
       <v-row align="center" justify="center">
         <span> For a better world! </span>
