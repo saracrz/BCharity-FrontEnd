@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-row align="center" justify="center" class=" general">
-      <img width="135px" class="mx-12" :src="require('~/assets/Logo.png')" />
+      <img width="135px" class="mx-12" :src="require('~/assets/logo.png')" />
       <v-col cols="10" class="col-md-6">
         <v-form ref="form" lazy-validation>
           <v-card-title>

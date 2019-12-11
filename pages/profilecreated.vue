@@ -3,7 +3,7 @@
     <img
       width="70px"
       class="mx-12 mt-6"
-      :src="require('~/assets/Logocruzado.png')"
+      :src="require('~/assets/logocruzado.png')"
     />
     <v-col cols="10" class="col-md-6">
       <div id="ok" align="center" justify="center" class="mx-auto mt-4">
