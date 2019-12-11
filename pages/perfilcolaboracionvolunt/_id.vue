@@ -3,7 +3,7 @@
     <p class="subtitle-1 font-weight-regular mx-2 mt-2">
       Propón una colaboración
     </p>
-    <v-img height="300" :src="require('~/static/carlos.jpg')"></v-img>
+    <v-img height="300" :src="require('~/static/profile-carlos.jpg')"></v-img>
 
     <v-card-title class="mb-0"></v-card-title>
     <v-card-text>

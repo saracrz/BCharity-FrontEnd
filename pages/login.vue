@@ -1,6 +1,6 @@
 <template>
   <v-row align="center" justify="center">
-    <img width="135px" class="mx-12" :src="require('~/assets/logo.png')" />
+    <img width="135px" class="mx-12" :src="require('~/assets/logo-bc.png')" />
     <v-col cols="10" class="col-md-4">
       <v-form ref=" caption form" lazy-validation>
         <v-card-title>

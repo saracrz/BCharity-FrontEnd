@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-img height="250" :src="require('~/static/carlos.jpg')"></v-img>
+    <v-img height="250" :src="require('~/static/profile-carlos.jpg')"></v-img>
 
     <v-card-title>Carlos</v-card-title>
     <v-card-text>
