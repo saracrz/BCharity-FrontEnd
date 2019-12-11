@@ -1,22 +1,23 @@
 <template>
   <v-row align="center" justify="center">
-    <img width="145px" class="mx-12" :src="require('~/assets/Logo.png')" />
-    <v-col cols="10" class="col-md-6">
-      <v-form ref="form" lazy-validation>
+    <img width="135px" class="mx-12" :src="require('~/assets/Logo.png')" />
+    <v-col cols="10" class="col-md-4">
+      <v-form ref=" caption form" lazy-validation>
         <v-card-title>
           <h4 class="mx-auto">¡Hola de nuevo!</h4>
         </v-card-title>
         <v-card-text>
           <v-text-field
             v-model="email"
-            class="font-weight-light"
+            class="font-weight-thin caption"
             label="E-mail"
+            color="#54CEC3"
             :rules="[rules.required, rules.email]"
             validate-on-blur
           />
           <v-text-field
             v-model="password"
-            class="pt-0 font-weight-light"
+            class="pt-0 font-weight-thin caption"
             color="#54CEC3"
             :type="showPassword ? 'text' : 'password'"
             :rules="[rules.required]"

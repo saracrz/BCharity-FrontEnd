@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-row align="center" justify="center" class=" general">
-      <img width="145px" class="mx-12" :src="require('~/assets/Logo.png')" />
+      <img width="135px" class="mx-12" :src="require('~/assets/Logo.png')" />
       <v-col cols="10" class="col-md-6">
         <v-form ref="form" lazy-validation>
           <v-card-title>
@@ -10,21 +10,24 @@
           <v-card-text>
             <v-text-field
               v-model="name"
-              class="font-weight-light"
+              class="font-weight-thin"
               label="Name"
+              color="#54CEC3"
               :rules="[rules.required]"
               validate-on-blur
             />
             <v-text-field
               v-model="email"
-              class="pt-0 mt-0 font-weight-light"
+              class="pt-0 mt-0 font-weight-thin"
               label="E-mail"
+              color="#54CEC3"
               :rules="[rules.required, rules.email]"
               validate-on-blur
             />
             <v-text-field
               v-model="password"
-              class="pt-0 mt-0 font-weight-light"
+              class="pt-0 mt-0 font-weight-thin"
+              color="#54CEC3"
               :type="showPassword ? 'text' : 'password'"
               :rules="[rules.required, rules.password]"
               :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"

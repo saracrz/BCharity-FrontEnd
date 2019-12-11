@@ -1,17 +1,38 @@
 <template>
-  <v-row align="center" justify="center" class="mx-auto">
-    <v-col cols="10" class="col-md-6">
-      <v-content>
-        <v-container id="welcome" align="center" justify="center">
-          ¡Bienvenido a bcharity {{ userName }}!
-        </v-container>
+  <v-row id="background" class="pt-5px">
+    <v-col cols="12" class="col-md-6 ">
+      <v-content id="welcome" align="center" justify="center">
+        <p class="mx-auto mr-8">
+          Bienvenido a BCharity
+        </p>
       </v-content>
-      <p class="text subtitle-1 mx-8 text-center">
-        Somos una fundación....
-      </p>
+      <v-img
+        width="140"
+        class="mx-auto "
+        :src="require('~/assets/landing.png')"
+      ></v-img>
+
+      <v-col cols="12" class="col-md-8">
+        <v-content
+          id="text"
+          class="mx-auto my-0"
+          align="center"
+          justify="center"
+        >
+          <p class="subtitle-1 "></p>
+          <p class="text subtitle-1 mx-8 my-0 mb-6 text-center">
+            Somos una organización que conecta voluntarios con pacientes
+            hospitalarios. Creemos en un mundo mejor y esperamos que nos ayudes
+            a conseguirlo.
+          </p>
+          <v-spacer></v-spacer>
+        </v-content>
+      </v-col>
+
       <div>
         <v-spacer></v-spacer>
-        <p class="mx-auto" align="center" justify="center">
+        <v-divider></v-divider>
+        <p class="mx-auto mt-6" align="center" justify="center">
           ¿Qué te gustaría hacer ahora?
         </p>
         <v-card color="#54CEC3" class="mx-auto py-0 mt-8 " width="300">
@@ -50,9 +71,13 @@ export default {
 <style lang="scss" scoped>
 #welcome {
   font-family: 'Yeseva One', cursive;
-  font-size: px;
+  font-size: 24px;
 }
-#titulo {
-  height: 70vh;
+.text {
+  font-family: 'Lato', sans-serif;
+}
+#background {
+  height: 170px;
+  padding-top: 5px;
 }
 </style>
