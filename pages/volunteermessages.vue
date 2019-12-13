@@ -30,7 +30,7 @@ export default {
       axios
         .get(`/services/search?volunteer_Id=${this.getVolunteerData._id}`)
         .then(services => (this.items = services.data))
-    }, 0)
+    }, 100)
   }
 }
 </script>
