@@ -4,9 +4,9 @@
       <v-img
         v-if="!clicked"
         height="250"
-        :src="require('~/static/profile-carlos.jpg')"
+        :src="require('~/static/silhouette.jpg')"
       ></v-img>
-      <v-img v-if="clicked" height="250" :src="newVolunteer.photoURl"></v-img>
+      <v-img v-if="clicked" height="250" :src="newVolunteer.photoURL"></v-img>
       <v-file-input
         class="mt-10"
         accept="image/png, image/jpeg, image/bmp"
@@ -83,7 +83,7 @@ export default {
     newVolunteer: {
       description: '',
       photoURL:
-        'https://images.unsplash.com/photo-1488423680352-79e37c24c59f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80',
+        'https://images.unsplash.com/photo-1495383294417-3166600af8a3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3150&q=80',
       dias: [],
       horario: [],
       userId: ''

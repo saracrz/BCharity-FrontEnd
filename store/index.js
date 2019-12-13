@@ -31,6 +31,9 @@ export const getters = {
   },
   getTimeSelected(state) {
     return state.timeSelected
+  },
+  getServiceData(state) {
+    return state.service
   }
 }
 export const mutations = {
@@ -59,5 +62,9 @@ export const mutations = {
   savePacientData(state, pacient) {
     console.log({ pacient })
     state.pacientData = pacient
+  },
+  saveService(state, service) {
+    console.log({ service })
+    state.service
   }
 }

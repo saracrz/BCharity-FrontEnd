@@ -16,7 +16,7 @@
     <v-navigation-drawer v-if="getToken" v-model="drawer" app right>
       <v-list-item>
         <v-list-item-avatar>
-          <v-img :src="require('~/assets/079801.jpg')"></v-img>
+          <v-img :src="photoURL"></v-img>
         </v-list-item-avatar>
 
         <v-list-item-content>
@@ -72,17 +72,19 @@ export default {
           to: '/altavoluntario'
         },
         {
-          title: 'Messages',
+          title: 'Mensajes',
           icon: 'mdi-android-messages',
-          to: ''
+          to: '/volunteermessages'
         },
         {
-          title: 'Favorite Ads',
+          title: 'Favorite',
           icon: 'mdi-heart-multiple-outline',
           to: '/favorite-ads'
         },
         { title: 'Settings', icon: 'mdi-settings-outline', to: '' }
-      ]
+      ],
+      photoURL:
+        'https://images.unsplash.com/photo-1495383294417-3166600af8a3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3150&q=80'
     }
   },
 

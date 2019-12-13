@@ -1,6 +1,10 @@
 <template>
   <div>
-    <p class="subtitle-1 font-weight-regular mx-2 mt-2">
+    <p
+      align="center"
+      justify="center"
+      class="subtitle-2 font-weight-regular mx-2 mt-2"
+    >
       Propón una colaboración
     </p>
     <v-img height="300" :src="volunteer.photoURL"></v-img>
@@ -97,6 +101,7 @@ export default {
         .then(response => response.data)
         .then(service => {
           console.log({ service })
+          this.$store.commit('saveService', service)
           this.$router.push('/volunteermessages')
         })
     }

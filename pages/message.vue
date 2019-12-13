@@ -13,7 +13,22 @@
 </template>
 
 <script>
-export default {}
+import { mapGetters } from 'vuex'
+export default {
+  data: () => ({
+    items: {
+      patient_Id: '',
+      volunteer_Id: '',
+      message: '',
+      horario: '',
+      dias: '',
+      fecha: '13/Dic'
+    }
+  }),
+  computed: {
+    ...mapGetters(['getVolunteerData', 'getPacientData'])
+  }
+}
 </script>
 
 <style lang="scss" scoped></style>

@@ -1,7 +1,9 @@
 <template>
   <div>
     <v-row class="form mx-auto ">
-      <p class="subtitle-1 mx-auto  my-2 mb-8">Información personal</p>
+      <p class="subtitle-1 font-weight-regular mx-auto  my-2 mb-8">
+        Información personal
+      </p>
       <v-col cols="11" justify="center" class="mx-auto font-weight-light">
         <v-avatar class=" ml-4">
           <img src="./../assets/079801.jpg" class="pic mb-10" alt="Maria" />
@@ -12,7 +14,7 @@
           v-model="newUser.name"
           color="#54CEC3"
           class="mt-0 pt-0"
-          placeholder="Lily"
+          placeholder="Sabrina"
           outlined
           label="Name"
           required
@@ -22,7 +24,7 @@
           style="padding:0px"
           label="Apellido"
           loader-height="1"
-          class="mt-0 pt-0 caption"
+          class="mt-0 pt-0 "
           placeholder="Díaz"
           color="#54CEC3"
           outlined
@@ -38,7 +40,7 @@
           v-model="newUser.address"
           color="#54CEC3"
           class="mt-0 pt-0"
-          placeholder="Díaz"
+          placeholder="Elige una localidad"
           outlined
           :items="Localidad"
           :rules="[v => !!v || 'La localidad es obliglatoria']"

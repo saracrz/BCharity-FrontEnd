@@ -8,7 +8,7 @@
       >
         Nuevo paciente
       </p>
-      <v-img height="250" :src="require('~/assets/persona-de-60.jpg')"></v-img>
+      <v-img height="250" :src="require('~/static/persona-de-60.jpg')"></v-img>
       <v-card-title class="ml-2">
         <v-col cols="12" sm="12">
           <v-text-field
@@ -101,6 +101,9 @@ export default {
 
     horarios: ['Mañana', 'Tarde']
   }),
+  computed: {
+    ...mapGetters(['getUserID'])
+  },
   methods: {
     async saveQuery() {
       const token = this.$store.getters.getToken
@@ -119,9 +122,6 @@ export default {
         console.error(response.error)
       }
     }
-  },
-  computed: {
-    ...mapGetters(['getUserID'])
   }
 }
 </script>
