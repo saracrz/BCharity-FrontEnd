@@ -51,7 +51,8 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import axios from '~/plugins/axios'
+import API from '~/services/api'
+
 export default {
   data() {
     return {
@@ -82,28 +83,22 @@ export default {
       'getPacientData'
     ])
   },
-  created() {
-    axios
-      .get('http://localhost:2222/api/volunteers/' + this.$route.params.id)
-      .then(res => res.data)
-      .then(volunteer => (this.volunteer = volunteer))
+  async created() {
+    await API.getVolunteers(this.$route.params.id).then(
+      volunteer => (this.volunteer = volunteer)
+    )
   },
   methods: {
-    createService() {
+    async createService() {
       this.newService.dias = this.getDaysSelected
       this.newService.horario = this.getTimeSelected
       this.newService.volunteer_Id = this.$route.params.id
       this.newService.patient_Id = this.getPacientData._id
-      axios
-        .post('/services', this.newService, {
-          headers: { access_token: this.getToken }
-        })
-        .then(response => response.data)
-        .then(service => {
-          console.log({ service })
-          this.$store.commit('saveService', service)
-          this.$router.push('/volunteermessages')
-        })
+
+      await API.createService(this.newService, this.getToken).then(service => {
+        this.$store.commit('saveService', service)
+        this.$router.push('/volunteermessages')
+      })
     }
   }
 }

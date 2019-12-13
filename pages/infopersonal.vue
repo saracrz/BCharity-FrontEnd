@@ -37,7 +37,7 @@
           outlined
         ></v-text-field>
         <v-select
-          v-model="newUser.address"
+          v-model="newUser.lugar"
           color="#54CEC3"
           class="mt-0 pt-0"
           placeholder="Elige una localidad"
@@ -62,7 +62,9 @@
 </template>
 
 <script>
-import axios from '~/plugins/axios'
+import API from '~/services/api'
+import { mapGetters } from 'vuex'
+
 export default {
   data() {
     return {
@@ -70,7 +72,7 @@ export default {
         name: '',
         apellido: '',
         phone: '',
-        address: ''
+        lugar: ''
       },
       Localidad: [
         'Gran Canaria',
@@ -83,15 +85,13 @@ export default {
       ]
     }
   },
+  computed: {
+    ...mapGetters(['getToken', 'getUserID'])
+  },
   methods: {
-    createUser() {
-      axios
-        .post('/users', this.newUser)
-        .then(response => response.data)
-        .then(user => {
-          console.log({ user })
-          this.$router.push('/welcome')
-        })
+    async createUser() {
+      await API.updateUser(this.getUserID, this.newUser, this.getToken)
+      this.$router.push('/welcome')
     }
   }
 }
