@@ -34,7 +34,7 @@
 
       <v-card-title class="subtitle-1">Disponibilidad:</v-card-title>
       <v-select
-        id="selects"
+        id="selectDias"
         v-model="newVolunteer.dias"
         class="mx-4 font-weight-thin"
         outlined
@@ -52,7 +52,7 @@
         </template>
       </v-select>
       <v-select
-        id="selects"
+        id="selectHorario"
         v-model="newVolunteer.horario"
         :items="horarios"
         label="Selecciona un horario"
