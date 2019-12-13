@@ -8,12 +8,12 @@
       <v-spacer />
 
       <v-app-bar-nav-icon
-        v-if="userName"
+        v-if="getToken"
         @click.stop="drawer = !drawer"
       ></v-app-bar-nav-icon>
     </v-app-bar>
 
-    <v-navigation-drawer v-if="userName" v-model="drawer" app right>
+    <v-navigation-drawer v-if="getToken" v-model="drawer" app right>
       <v-list-item>
         <v-list-item-avatar>
           <v-img :src="require('~/assets/079801.jpg')"></v-img>
@@ -51,7 +51,7 @@
 
     <v-footer fixed app class="text-center ">
       <v-row align="center" justify="center">
-        <span> For a better world! </span>
+        <span> </span>
       </v-row>
     </v-footer>
   </v-app>
@@ -87,7 +87,7 @@ export default {
   },
 
   computed: {
-    ...mapGetters(['userName'])
+    ...mapGetters(['getToken', 'userName'])
   },
   methods: {
     logout() {

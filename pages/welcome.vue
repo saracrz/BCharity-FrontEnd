@@ -60,7 +60,15 @@
 import { mapGetters } from 'vuex'
 export default {
   computed: {
-    ...mapGetters(['userName'])
+    ...mapGetters(['userName', 'getRole'])
+  },
+  created() {
+    setTimeout(() => {
+      console.log(this.getRole)
+      if (this.getRole === 'Voluntario') {
+        this.$router.push('/volunteermessages')
+      }
+    }, 0)
   }
 }
 </script>

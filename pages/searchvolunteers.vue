@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p class="subtitle-1 font-weight-regular mx-2 mt-2">
+    <p class="subtitle-1 font-weight-regular mx-auto mt-2">
       Selecciona un voluntario
     </p>
     <Volunteer :volunteers="volunteers"></Volunteer>
@@ -26,19 +26,24 @@ export default {
     // obtener del store el token
     console.log(this.getToken)
 
-    // this.getToken = this.$store.commit('saveToken', newToken.data)
+    console.log(this.getDaysSelected)
+    const dias = this.getDaysSelected /* days here */
+    const horario = this.getTimeSelected /* days here */
+    let url = `http://localhost:2222/api/volunteers/search?dias=${JSON.stringify(
+      dias
+    )}&horario=${JSON.stringify(horario)}`
 
-    // obtener del store la consulta que se quería hacer
+    const headers = {
+      access_token: this.getToken /* token here*/,
+      'Access-Control-Allow-Origin': true
+    }
 
-    const dias = [this.getDaysSelected] /*  los dias here*/
-    const horario = [this.getTimeSelected] /*  los dias here*/
-    let url = `http://localhost:2222/api/volunteers/search?dias=["${dias}"]&horario=["${horario}"]`
+    console.log(headers)
 
     this.$axios
       .get(url, {
-        headers: {
-          access_token: this.getToken /*  token here*/
-        }
+        headers: headers,
+        mode: 'cors'
       })
       .then(response => (this.volunteers = response.data))
       .catch(() => (this.volunteers = [{}]))

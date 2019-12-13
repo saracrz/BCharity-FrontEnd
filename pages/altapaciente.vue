@@ -36,7 +36,7 @@
       <v-card-title class="subtitle-1">Disponibilidad:</v-card-title>
       <v-select
         id="selects"
-        v-model="daysSelected"
+        v-model="newPatient.dias"
         class="mx-4 font-weight-thin"
         outlined
         :items="dias"
@@ -51,7 +51,7 @@
       </v-select>
       <v-select
         id="selects"
-        v-model="timeSelected"
+        v-model="newPatient.horario"
         :items="horarios"
         label="Horario"
         outlined
@@ -75,12 +75,16 @@
 
 <script>
 import API from '~/services/api'
+import { mapGetters } from 'vuex'
 
 export default {
   data: () => ({
     newPatient: {
       name: '',
-      description: ''
+      description: '',
+      horario: [],
+      dias: [],
+      userId: ''
     },
 
     value:
@@ -94,24 +98,30 @@ export default {
       'Sábado',
       'Domingo'
     ],
-    daysSelected: [],
-    horarios: ['Mañana', 'Tarde'],
-    timeSelected: []
+
+    horarios: ['Mañana', 'Tarde']
   }),
   methods: {
     async saveQuery() {
       const token = this.$store.getters.getToken
+      console.log(this.daysSelected)
+      this.newPatient.userId = this.getUserID
+
       const response = await API.createPatient(this.newPatient, token)
-      if (!response) {
+      if (!response.error) {
         this.$store.commit('saveQuery', {
-          daysSelected: this.daysSelected,
-          timeSelected: this.timeSelected
+          daysSelected: this.newPatient.dias,
+          timeSelected: this.newPatient.horario
         })
+        this.$store.commit('savePacientData', response)
         this.$router.push('/searchvolunteers')
       } else {
-        alert(response)
+        console.error(response.error)
       }
     }
+  },
+  computed: {
+    ...mapGetters(['getUserID'])
   }
 }
 </script>

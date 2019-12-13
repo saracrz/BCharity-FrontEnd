@@ -9,7 +9,7 @@
       >
         <v-card
           :to="{
-            path: '/perfilcolaboracionvolunt/' + '5defc332b8746e329fa553d7'
+            path: '/perfilcolaboracionvolunt/' + volunteer._id
           }"
         >
           <v-img
@@ -18,7 +18,7 @@
             gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
             height="200px"
           >
-            <v-card-title v-text="volunteer.name"></v-card-title>
+            <v-card-title v-text="volunteer.userId.name"></v-card-title>
             <nuxt-link class="logo ml-2" to="/perfilcolaboracionvolunt">
               Más
             </nuxt-link>
@@ -30,6 +30,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   props: {
     volunteers: {
@@ -37,7 +38,10 @@ export default {
       default: null
     }
   },
-  data: () => ({})
+  data: () => ({}),
+  computed: {
+    ...mapGetters(['getUserID', 'userName'])
+  }
 }
 </script>
 

@@ -1,15 +1,30 @@
 <template>
   <div>
     <v-col cols="12" sm="8">
-      <v-img height="250" :src="require('~/static/profile-carlos.jpg')"></v-img>
+      <v-img
+        v-if="!clicked"
+        height="250"
+        :src="require('~/static/profile-carlos.jpg')"
+      ></v-img>
+      <v-img v-if="clicked" height="250" :src="newVolunteer.photoURl"></v-img>
+      <v-file-input
+        class="mt-10"
+        accept="image/png, image/jpeg, image/bmp"
+        placeholder="Sube tu imagen"
+        prepend-icon="mdi-camera"
+        label="Avatar"
+        color="#54CEC3"
+        @change="clicked = true"
+      ></v-file-input>
+      <v-card-title class="title ml-2"> Hola {{ userName }}!</v-card-title>
 
-      <v-card-title>Carlos</v-card-title>
       <v-card-text>
         <v-col cols="12" sm="12">
           <v-textarea
+            v-model="newVolunteer.description"
             color="#54CEC3"
             label="Descripción"
-            placeholder="Cuénta a los pacientes más sobre ti"
+            placeholder="Cuenta a los pacientes más sobre ti"
             resize
             rows="2"
             :value="value"
@@ -20,7 +35,7 @@
       <v-card-title class="subtitle-1">Disponibilidad:</v-card-title>
       <v-select
         id="selects"
-        v-model="valor"
+        v-model="newVolunteer.dias"
         class="mx-4 font-weight-thin"
         outlined
         :items="items"
@@ -32,14 +47,15 @@
             <span>{{ item }}</span>
           </v-chip>
           <span v-if="index === 1" class="grey--text caption"
-            >(+{{ valor.length - 1 }} others)</span
+            >(+{{ horarios.length - 1 }} others)</span
           >
         </template>
       </v-select>
       <v-select
         id="selects"
-        :items="items"
-        label="Horario"
+        v-model="newVolunteer.horario"
+        :items="horarios"
+        label="Selecciona un horario"
         outlined
         class="mx-4 my-0 pt-0"
       ></v-select>
@@ -47,11 +63,11 @@
         <v-spacer></v-spacer>
         <v-btn
           id="button-voluntarios"
-          to="/profilecreated"
           center
           color="#54CEC3"
           justify="align-center"
           class="mx-auto mr-8 my-6 white--text"
+          @click="createVolunteer()"
           >Guardar</v-btn
         >
       </v-card-actions>
@@ -60,8 +76,18 @@
 </template>
 
 <script>
+import axios from '~/plugins/axios'
+import { mapGetters } from 'vuex'
 export default {
   data: () => ({
+    newVolunteer: {
+      description: '',
+      photoURL:
+        'https://images.unsplash.com/photo-1488423680352-79e37c24c59f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80',
+      dias: [],
+      horario: [],
+      userId: ''
+    },
     rules: [v => v.length <= 150 || 'Max 150 characters'],
     value: '',
     items: [
@@ -73,8 +99,33 @@ export default {
       'Sábado',
       'Domingo'
     ],
-    valor: ['Lunes', 'Martes', 'miércoles']
-  })
+    horarios: ['Mañana', 'Tarde'],
+    clicked: false
+  }),
+  computed: {
+    ...mapGetters(['getUserID', 'userName', 'getToken'])
+  },
+  methods: {
+    createVolunteer() {
+      this.newVolunteer.userId = this.getUserID
+
+      axios
+        .post('/volunteers', this.newVolunteer, {
+          headers: { access_token: this.getToken }
+        })
+        .then(response => response.data)
+        .then(volunteer => {
+          console.log({ volunteer })
+          this.$router.push('/profilecreated')
+        })
+    },
+    getRandomNumber() {
+      return Math.random() * (100 - 10) + 10
+    },
+    getRandomGender() {
+      return 'male'
+    }
+  }
 }
 </script>
 

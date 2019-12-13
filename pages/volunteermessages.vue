@@ -26,49 +26,23 @@
   </v-list>
 </template>
 <script>
+import { mapGetters } from 'vuex'
+import axios from '../plugins/axios'
 export default {
   data: () => ({
-    items: [
-      { header: 'Today' },
-      {
-        avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg',
-        name: 'Alex',
-        date: '21 Oct',
-        subtitle:
-          " I'll be in your neighborhood doing errands this weekend. Do you want to hang out?"
-      },
-      { divider: true, inset: true },
-      {
-        avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg',
-        name: 'David',
-        date: '21 Oct',
-        subtitle: 'Wish I could come, but Im out of town this weekend.'
-      },
-      { divider: true, inset: true },
-      {
-        avatar: 'https://cdn.vuetifyjs.com/images/lists/3.jpg',
-        name: 'Lily',
-        date: '21 Oct',
-        subtitle: 'Do you have Paris recommendations? Have you ever been?'
-      },
-      { divider: true, inset: true },
-      {
-        avatar: 'https://cdn.vuetifyjs.com/images/lists/4.jpg',
-        name: 'Lucia',
-        date: '21 Oct',
-        subtitle:
-          "<span class='text--primary'>Trevor Hansen</span> &mdash; Have any ideas about what we should get Heidi for her birthday?"
-      },
-      { divider: true, inset: true },
-      {
-        avatar: 'https://cdn.vuetifyjs.com/images/lists/5.jpg',
-        name: 'Tim',
-        date: '21 Oct',
-        subtitle:
-          "<span class='text--primary'>Britta Holt</span> &mdash; We should eat this: Grate, Squash, Corn, and tomatillo Tacos."
-      }
-    ]
-  })
+    items: []
+  }),
+  computed: {
+    ...mapGetters(['getVolunteerData'])
+  },
+  created() {
+    setTimeout(() => {
+      console.log({ volunteer: this.getVolunteerData })
+      axios
+        .get(`/services/search?volunteer_Id=${this.getVolunteerData._id}`)
+        .then(messages => (this.items = messages.data))
+    }, 0)
+  }
 }
 </script>
 

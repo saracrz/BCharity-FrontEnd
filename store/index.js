@@ -1,17 +1,30 @@
 export const state = () => ({
   token: '',
-  userName: '',
-  email: '',
+  user: {},
   daysSelected: [],
-  timeSelected: []
+  timeSelected: [],
+  pacientData: {},
+  volunteerData: {}
 })
 
 export const getters = {
   userName(state) {
-    return state.userName
+    return state.user.name
   },
   getToken(state) {
     return state.token
+  },
+  getRole(state) {
+    return state.user.role
+  },
+  getPacientData(state) {
+    return state.pacientData
+  },
+  getVolunteerData(state) {
+    return state.volunteerData
+  },
+  getUserID(state) {
+    return state.user._id
   },
   getDaysSelected(state) {
     return state.daysSelected
@@ -21,20 +34,30 @@ export const getters = {
   }
 }
 export const mutations = {
-  saveToken(state, { username, email, token }) {
+  saveUser(state, { token, user, pacientData, volunteerData }) {
     state.token = token
-    state.userName = username
-    state.email = email
+    state.user = user
+    if (pacientData) {
+      state.pacientData = pacientData
+    }
+    if (volunteerData) {
+      state.volunteerData = volunteerData
+    }
   },
   saveQuery(state, { daysSelected, timeSelected }) {
     console.log('paso por aki')
 
     state.daysSelected = daysSelected
+    console.log(state.daysSelected)
+
     state.timeSelected = timeSelected
   },
   clearToken(state) {
     state.token = ''
-    state.userName = ''
-    state.email = ''
+    state.user = {}
+  },
+  savePacientData(state, pacient) {
+    console.log({ pacient })
+    state.pacientData = pacient
   }
 }

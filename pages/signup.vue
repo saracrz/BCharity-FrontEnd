@@ -39,7 +39,6 @@
               <v-btn
                 id="button-register"
                 width="400px"
-                to="/infopersonal"
                 center
                 color="#54CEC3"
                 class="mr-4 white--text"
@@ -88,8 +87,8 @@ export default {
 
       const newToken = await axios.post('auth/signup', user)
       if (!newToken.error) {
-        this.$store.commit('saveToken', newToken.data)
-        this.$router.push('/')
+        this.$store.commit('saveUser', newToken.data)
+        this.$router.push('/infopersonal')
       } else {
         alert(newToken.error)
       }

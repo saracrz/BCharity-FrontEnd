@@ -53,10 +53,10 @@
         ></v-file-input>
         <v-content>
           <v-btn
-            to="/welcome"
             color="#54CEC3"
             width="300px"
             class="mt-0 white--text"
+            @click="createUser()"
             >Continuar</v-btn
           >
         </v-content>
@@ -88,7 +88,7 @@ export default {
       ]
     }
   },
-  method: {
+  methods: {
     createUser() {
       axios
         .post('/users', this.newUser)
