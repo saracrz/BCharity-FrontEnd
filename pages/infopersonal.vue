@@ -46,13 +46,7 @@
           :rules="[v => !!v || 'La localidad es obliglatoria']"
           label="Localidad"
         ></v-select>
-        <v-file-input
-          v-model="newUser.photoDNI"
-          class="my-0"
-          label="Adjuntar copia DNI"
-          color="#54CEC3"
-          outlined
-        ></v-file-input>
+
         <v-content>
           <v-btn
             color="#54CEC3"
@@ -76,7 +70,6 @@ export default {
         name: '',
         apellido: '',
         phone: '',
-        photoDNI: null,
         address: ''
       },
       Localidad: [

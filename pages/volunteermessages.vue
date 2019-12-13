@@ -1,6 +1,8 @@
 <template>
   <v-list three-line>
-    <Message v-for="(item, index) in items" :key="index" :service="item" />
+    <div v-if="items">
+      <Message v-for="(item, index) in items" :key="index" :service="item" />
+    </div>
   </v-list>
 </template>
 <script>
