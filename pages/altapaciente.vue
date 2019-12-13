@@ -4,17 +4,19 @@
       <p
         align="center"
         justify="center"
-        class="subtitle-2 font-weight-regular mx-auto"
+        class="subtitle-1 font-weight-regular mx-auto"
       >
         Nuevo paciente
       </p>
       <v-img height="250" :src="require('~/static/persona-de-60.jpg')"></v-img>
-      <v-card-title class="ml-2">
-        <v-col cols="12" sm="12">
+      <v-card-title class="ml-0" style="padding-bottom:0px; margin-bottom: 0px">
+        <v-col cols="12">
           <v-text-field
             v-model="newPatient.name"
+            class="subtitle-1"
             color="#54CEC3"
             label="Nombre"
+            placeholder="Alberto"
           >
           </v-text-field>
         </v-col>
@@ -24,11 +26,13 @@
         <v-col cols="12">
           <v-textarea
             v-model="newPatient.description"
+            class="subtitle-1 font-weight-regular "
             color="#54CEC3"
             label="Escribe una descripción"
-            style="padding:0px"
+            style="padding: 0px"
             resize
             rows="3"
+            placeholder="A Alberto le gusta hablar de cine , salir a dar un paseo, jugar a dominó y que le enseñen a utilizar nuevas tecnologías."
           ></v-textarea>
         </v-col>
       </v-card-text>
@@ -50,7 +54,7 @@
         </template>
       </v-select>
       <v-select
-        id="selects"
+        id="selects2"
         v-model="newPatient.horario"
         :items="horarios"
         label="Horario"
@@ -80,8 +84,9 @@ import { mapGetters } from 'vuex'
 export default {
   data: () => ({
     newPatient: {
-      name: '',
-      description: '',
+      name: 'Alberto',
+      description:
+        'A Alberto le gusta hablar de cine , salir a dar un paseo, jugar a dominó y que le enseñen a utilizar nuevas tecnologías.',
       horario: [],
       dias: [],
       userId: ''

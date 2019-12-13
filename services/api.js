@@ -17,9 +17,19 @@ export default {
       .then(response => response.data)
   },
   updateUser(userId, newUser, access_token) {
-    debugger
     return axios
       .put(`/users/${userId}`, newUser, {
+        headers: { access_token }
+      })
+      .then(response => response.data)
+  },
+  findVolunteers(dias, horario, access_token) {
+    let url = `/volunteers/search?dias=${JSON.stringify(
+      dias
+    )}&horario=${JSON.stringify(horario)}`
+
+    return axios
+      .get(url, {
         headers: { access_token }
       })
       .then(response => response.data)

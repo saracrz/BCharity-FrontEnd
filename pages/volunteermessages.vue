@@ -1,5 +1,14 @@
 <template>
   <v-list three-line>
+    <div>
+      <p
+        align="center"
+        justify="center"
+        class="subtitle-1 font-weight-regular mx-auto mb-4"
+      >
+        Mensajes
+      </p>
+    </div>
     <div v-if="items">
       <Message v-for="(item, index) in items" :key="index" :service="item" />
     </div>

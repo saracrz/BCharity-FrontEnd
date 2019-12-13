@@ -18,10 +18,10 @@
             gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
             height="200px"
           >
-            <v-card-title v-text="volunteer.userId.name"></v-card-title>
-            <nuxt-link class="logo ml-2" to="/perfilcolaboracionvolunt">
-              Más
-            </nuxt-link>
+            <v-card-title
+              v-if="volunteer.userId"
+              v-text="volunteer.userId.name"
+            ></v-card-title>
           </v-img>
         </v-card>
       </v-col>
@@ -35,7 +35,7 @@ export default {
   props: {
     volunteers: {
       type: Array,
-      default: null
+      default: () => []
     }
   },
   data: () => ({}),

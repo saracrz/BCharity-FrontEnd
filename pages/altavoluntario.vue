@@ -1,9 +1,16 @@
 <template>
   <div>
+    <p
+      align="center"
+      justify="center"
+      class="subtitle-1 font-weight-regular mx-auto"
+    >
+      Nuevo paciente
+    </p>
     <v-col cols="12" sm="8">
       <v-img
         v-if="!clicked"
-        height="250"
+        height="270"
         :src="require('~/static/silhouette.jpg')"
       ></v-img>
       <v-img v-if="clicked" height="250" :src="newVolunteer.photoURL"></v-img>
@@ -26,7 +33,7 @@
             label="Descripción"
             placeholder="Cuenta a los pacientes más sobre ti"
             resize
-            rows="2"
+            rows="6"
             :value="value"
           ></v-textarea>
         </v-col>
@@ -81,7 +88,8 @@ import { mapGetters } from 'vuex'
 export default {
   data: () => ({
     newVolunteer: {
-      description: '',
+      description:
+        'Sabrina es ingeniera de software y trabaja como Full Stack Developer en una empresa en Las Palmas. Le gusta ir al cine, hacer deporte, especialmente el piragüísmo, leer novelas policíacas y compartir momentos con sus amigos y familia.Ha viajado como voluntaria por muchos países (Asia y Sudamérica) trabajando en proyectos de colaboración humanitaria.Le encantaría ayudar a personas que necesiten de su compañía.¡Para más información contacta con ella!',
       photoURL:
         'https://images.unsplash.com/photo-1495383294417-3166600af8a3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3150&q=80',
       dias: [],

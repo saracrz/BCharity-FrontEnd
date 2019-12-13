@@ -63,7 +63,11 @@ export default {
       drawer: false,
       items: [
         { title: 'Perfil', icon: 'mdi-account', to: '/infopersonal' },
-        { title: 'Alta paciente', icon: 'mdi-magnify', to: '/altapaciente' },
+        {
+          title: 'Alta paciente',
+          icon: 'mdi-account-card-details',
+          to: '/altapaciente'
+        },
         {
           title: 'Alta voluntario',
           icon: 'mdi-account-card-details',

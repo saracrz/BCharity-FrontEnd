@@ -14,7 +14,6 @@
           v-model="newUser.name"
           color="#54CEC3"
           class="mt-0 pt-0"
-          placeholder="Sabrina"
           outlined
           label="Name"
           required
@@ -25,14 +24,12 @@
           label="Apellido"
           loader-height="1"
           class="mt-0 pt-0 "
-          placeholder="Díaz"
           color="#54CEC3"
           outlined
         ></v-text-field>
         <v-text-field
           v-model="newUser.phone"
           label="Teléfono"
-          placeholder="686-333-988"
           color="#54CEC3"
           outlined
         ></v-text-field>
@@ -40,7 +37,6 @@
           v-model="newUser.lugar"
           color="#54CEC3"
           class="mt-0 pt-0"
-          placeholder="Elige una localidad"
           outlined
           :items="Localidad"
           :rules="[v => !!v || 'La localidad es obliglatoria']"
@@ -49,9 +45,11 @@
 
         <v-content>
           <v-btn
+            align="center"
+            justify="center"
             color="#54CEC3"
             width="300px"
-            class="mt-0 white--text"
+            class="mt-0 mx-auto ml-6 white--text"
             @click="createUser()"
             >Continuar</v-btn
           >

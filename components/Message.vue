@@ -24,7 +24,9 @@
           >{{ service.patient_Id.name }}
         </v-list-item-title>
         <v-list-item-subtitle>{{ service.message }} </v-list-item-subtitle>
-        <v-btn color="#54CEC3" class="caption" text to="/message">Más</v-btn>
+        <v-btn color="#54CEC3" class="caption mr-12" text to="/message"
+          >Leer</v-btn
+        >
         <v-list-item-subtitle>{{ service.name }}</v-list-item-subtitle>
       </v-list-item-content>
     </v-list-item>

@@ -1,5 +1,10 @@
 <template>
   <v-row class="mt-12">
+    <img
+      width="70px"
+      class="mx-12 mt-6"
+      :src="require('~/assets/logocruzado-bc.png')"
+    />
     <div
       id="colaboration"
       align="center"
@@ -11,8 +16,8 @@
     <div>
       <v-col>
         <p class="text subtitle-1 mx-8 text-center">
-          Tu propuesta ha sido enviada a Carlos. En un plazo de 48 horas tendrás
-          una respuesta en tu email. ¡Suerte!
+          Tu propuesta ha sido enviada. En un plazo de 48 horas tendrás una
+          respuesta en tu email. ¡Suerte!
         </p>
       </v-col>
     </div>

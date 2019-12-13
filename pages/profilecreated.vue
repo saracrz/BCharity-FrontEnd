@@ -7,7 +7,7 @@
     />
     <v-col cols="10" class="col-md-6">
       <div id="ok" align="center" justify="center" class="mx-auto mt-4">
-        <p>¡Enhorabuena Carlos!</p>
+        <p>¡Enhorabuena!</p>
         <p class="text subtitle-1 mx-8 text-center mt-0">
           Tu perfil ha sido creado con éxito. Pronto algún paciente se pondrá en
           contacto contigo.

@@ -19,7 +19,7 @@
           justify="center"
           style="padding: 0px"
         >
-          <p class="text subtitle-1 mx-8 my-0 mb-6 mt-0 text-center">
+          <p class="text justify  mx-8 my-0 mb-6 mt-2 text-center">
             Somos una organización que conecta voluntarios con pacientes
             hospitalarios. Creemos en un mundo mejor y esperamos que nos ayudes
             a conseguirlo.
@@ -35,12 +35,8 @@
 
       <div>
         <v-spacer></v-spacer>
-        <v-divider
-          style="margin-left:80px; margin-right:80px"
-          color="#54CEC3"
-          class="my-8 mb-10"
-        ></v-divider>
-        <p class="title mx-auto mt-6 mb-8" align="center" justify="center">
+
+        <p class="title mx-auto mt-6 mb-10" align="center" justify="center">
           ¿Qué te gustaría hacer ahora?
         </p>
       </div>

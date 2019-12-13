@@ -30,11 +30,7 @@
 
       <div>
         <v-spacer></v-spacer>
-        <v-divider
-          style="margin-left:80px; margin-right:80px"
-          color="#54CEC3"
-          class="my-10"
-        ></v-divider>
+
         <p class="title mx-auto mt-6" align="center" justify="center">
           Acceder a BCharity
         </p>

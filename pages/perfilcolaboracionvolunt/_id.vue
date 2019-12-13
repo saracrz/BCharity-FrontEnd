@@ -3,7 +3,7 @@
     <p
       align="center"
       justify="center"
-      class="subtitle-2 font-weight-regular mx-2 mt-2"
+      class="subtitle-1 mt-2 font-weight-regular mx-auto"
     >
       Propón una colaboración
     </p>
@@ -27,9 +27,9 @@
           v-model="newService.message"
           color="#54CEC3"
           label="Mensaje"
-          placeholder="Deja un mensaje al voluntario"
+          placeholder=""
           resize
-          rows="2"
+          rows="6"
           :value="value"
         ></v-textarea>
       </v-col>
@@ -40,8 +40,9 @@
         id="button-voluntarios"
         center
         color="#54CEC3"
+        align="center"
         justify="align-center"
-        class="mx-auto mr-8 my-2 white--text"
+        class="mx-auto mr-12 my-2 white--text"
         @click="createService()"
         >Proponer Colaboración</v-btn
       >
@@ -57,7 +58,8 @@ export default {
   data() {
     return {
       newService: {
-        message: '',
+        message:
+          'Hola! ¿cómo estás? Te escribo porque me gustaría proponerte una colaboración. En concreto sería para mi padre, tengo dificultades para compaginar mi horario de trabajo con su ingreso en el hospital y pasa mucho tiempo solo. Muchas gracias por adelantado.',
         dias: [],
         horario: [],
         volunteer_Id: '',
@@ -97,7 +99,7 @@ export default {
 
       await API.createService(this.newService, this.getToken).then(service => {
         this.$store.commit('saveService', service)
-        this.$router.push('/volunteermessages')
+        this.$router.push('/confirmationcolaboration')
       })
     }
   }

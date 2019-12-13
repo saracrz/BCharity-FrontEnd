@@ -1,15 +1,22 @@
 <template>
-  <div>
-    <h3>Mensajes:</h3>
-    <v-text-field>21 Octubre 2019</v-text-field>
-    <p>
-      Hola Carlos, cómo estás? Te escribo porque he visto tu perfil y me
-      encantaría proponerte una colaboración. En concreto sería para mi padre,
-      tengo dificultades para compaginar mi horario de trabajo con su ingreso en
-      el hospital y pasa mucho tiempo solo. Espero tu respuesta. Muchas gracias
-      por adelantado.
-    </p>
-  </div>
+  <v-card class="mx-auto mt-8" max-width="344">
+    <v-card-text>
+      <div>Mensaje de Alberto:</div>
+      <p>21 Octubre 2019</p>
+      <p class=" text--primary">
+        Hola Carlos, cómo estás? Te escribo porque he visto tu perfil y me
+        encantaría proponerte una colaboración. En concreto sería para mi padre,
+        tengo dificultades para compaginar mi horario de trabajo con su ingreso
+        en el hospital y pasa mucho tiempo solo. Espero tu respuesta. Muchas
+        gracias por adelantado.
+      </p>
+    </v-card-text>
+    <v-card-actions>
+      <v-btn text to="welcome" color="deep-purple accent-4">
+        Aceptar
+      </v-btn>
+    </v-card-actions>
+  </v-card>
 </template>
 
 <script>
