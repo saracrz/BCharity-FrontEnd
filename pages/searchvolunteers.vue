@@ -1,12 +1,14 @@
 <template>
   <div>
-    <p
-      align="center"
-      justify="center"
-      class="subtitle-1 font-weight-regular mt-2 mx-auto"
-    >
+    <v-col cols="12">
+      <v-avatar
+        color="#54CEC3"
+        class="subheading white--text"
+        size="24"
+        v-text="step"
+      ></v-avatar>
       Selecciona un voluntario
-    </p>
+    </v-col>
     <Volunteer :volunteers="volunteers"></Volunteer>
   </div>
 </template>
@@ -22,6 +24,7 @@ export default {
     Volunteer
   },
   data: () => ({
+    step: '2',
     volunteers: []
   }),
 

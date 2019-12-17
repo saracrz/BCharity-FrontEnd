@@ -1,12 +1,14 @@
 <template>
   <div>
-    <p
-      align="center"
-      justify="center"
-      class="subtitle-1 mt-2 font-weight-regular mx-auto"
-    >
+    <v-col cols="12">
+      <v-avatar
+        color="#54CEC3"
+        class="subheading white--text"
+        size="24"
+        v-text="step"
+      ></v-avatar>
       Propón una colaboración
-    </p>
+    </v-col>
     <v-img height="300" :src="volunteer.photoURL"></v-img>
 
     <v-card-title class="mb-0"> {{ volunteer.name }}</v-card-title>
@@ -39,6 +41,7 @@
       <v-btn
         id="button-voluntarios"
         center
+        rounded
         color="#54CEC3"
         align="center"
         justify="align-center"
@@ -57,6 +60,7 @@ import API from '~/services/api'
 export default {
   data() {
     return {
+      step: '3',
       newService: {
         message:
           'Hola! ¿cómo estás? Te escribo porque me gustaría proponerte una colaboración. En concreto sería para mi padre, tengo dificultades para compaginar mi horario de trabajo con su ingreso en el hospital y pasa mucho tiempo solo. Muchas gracias por adelantado.',

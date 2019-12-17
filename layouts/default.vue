@@ -28,17 +28,13 @@
 
       <v-list dense>
         <v-list-item v-for="item in items" :key="item.title" :to="item.to">
-          <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-icon>
-
           <v-list-item-content>
             <v-list-item-title>{{ item.title }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
         <v-footer>
-          <v-btn text @click="logout">Cerrar Sesión</v-btn>
+          <v-btn text @click="logout">Salir</v-btn>
         </v-footer>
       </v-list>
     </v-navigation-drawer>
@@ -65,25 +61,25 @@ export default {
         { title: 'Perfil', icon: 'mdi-account', to: '/infopersonal' },
         {
           title: 'Alta paciente',
-          icon: 'mdi-account-card-details',
+
           to: '/altapaciente'
         },
         {
           title: 'Alta voluntario',
-          icon: 'mdi-account-card-details',
+
           to: '/altavoluntario'
         },
         {
           title: 'Mensajes',
-          icon: 'far fa-envelope',
+
           to: '/volunteermessages'
         },
         {
           title: 'Favorite',
-          icon: 'mdi-heart-multiple-outline',
+
           to: '/favorite-ads'
         },
-        { title: 'Settings', icon: 'mdi-settings-outline', to: '' }
+        { title: 'Settings', to: '' }
       ],
       photoURL:
         'https://images.unsplash.com/photo-1495383294417-3166600af8a3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3150&q=80'
@@ -111,7 +107,7 @@ export default {
 }
 .logo {
   text-decoration: none;
-  font-size: 22 px;
+  font-size: 26 px;
   color: black;
   font-family: 'Yeseva One', cursive;
   margin-top: 0px;

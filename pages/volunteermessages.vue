@@ -4,13 +4,14 @@
       <p
         align="center"
         justify="center"
-        class="subtitle-1 font-weight-regular mx-auto mb-4"
+        class="subtitle-1 font-weight-medium mx-auto mb-4"
       >
         Mensajes
       </p>
+      <v-divider class="mb-6"></v-divider>
     </div>
     <div v-if="items">
-      <Message v-for="(item, index) in items" :key="index" :service="item" />
+      <Message />
     </div>
   </v-list>
 </template>

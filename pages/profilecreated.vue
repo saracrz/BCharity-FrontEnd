@@ -1,10 +1,5 @@
 <template>
   <v-row align="center" justify="center">
-    <img
-      width="70px"
-      class="mx-12 mt-6"
-      :src="require('~/assets/logocruzado-bc.png')"
-    />
     <v-col cols="10" class="col-md-6">
       <div id="ok" align="center" justify="center" class="mx-auto mt-4">
         <p>¡Enhorabuena!</p>
@@ -16,6 +11,7 @@
           id="button-voluntarios"
           to="/volunteermessages"
           center
+          rounded
           outlined
           color="#54CEC3"
           align="center"
@@ -37,7 +33,7 @@ export default {}
 <style lang="scss" scoped>
 #ok {
   font-family: 'Yeseva One', cursive;
-  font-size: 20px;
+  font-size: 24px;
 }
 .text {
   font-family: 'Lato', sans-serif;

@@ -10,7 +10,11 @@
       Da de alta a un paciente
     </v-col>
     <div id="text">
-      <v-img height="250" :src="require('~/static/persona-de-60.jpg')"></v-img>
+      <v-img
+        class="mt-4"
+        height="250"
+        :src="require('~/static/persona-de-60.jpg')"
+      ></v-img>
       <v-card-title class="ml-0" style="padding-bottom:0px; margin-bottom: 0px">
         <v-col cols="12">
           <v-text-field
@@ -36,8 +40,8 @@
         </v-col>
       </v-card-title>
 
-      <v-card-title class="subtitle-1 font-weight-regular"
-        >Elige tu Disponibilidad:</v-card-title
+      <v-card-title class="subtitle-1 font-weight-regular ml-2"
+        >Selecciona tu disponibilidad:</v-card-title
       >
       <v-col cols="12">
         <v-select

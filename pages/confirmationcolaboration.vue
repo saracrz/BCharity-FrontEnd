@@ -1,10 +1,5 @@
 <template>
   <v-row class="mt-12">
-    <img
-      width="70px"
-      class="mx-12 mt-6"
-      :src="require('~/assets/logocruzado-bc.png')"
-    />
     <div
       id="colaboration"
       align="center"
@@ -31,8 +26,7 @@ export default {}
 <style lang="scss" scoped>
 #colaboration {
   font-family: 'Yeseva One', cursive;
-  font-size: 20px;
-  color: #54cec3;
+  font-size: 24px;
 }
 
 .text {
