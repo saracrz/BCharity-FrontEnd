@@ -54,7 +54,7 @@
           min-width="125px"
           center
           class="my-2"
-          to="/altavoluntario"
+          to="/login"
           color="#54CEC3"
           >Login</v-btn
         >
@@ -64,7 +64,7 @@
           min-width="125px"
           center
           class="my-2"
-          to="/altavoluntario"
+          to="/signup"
           color="#54CEC3"
           >Signup</v-btn
         >
