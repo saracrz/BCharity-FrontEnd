@@ -1,31 +1,38 @@
 <template>
   <div>
+    <div>
+      <v-stepper alt-labels>
+        <v-stepper-header>
+          <v-stepper-step color="#54CEC3" step="1"
+            ><p>Alta Paciente</p></v-stepper-step
+          >
+
+          <v-divider></v-divider>
+
+          <v-stepper-step step="2">Ad sizes</v-stepper-step>
+
+          <v-divider></v-divider>
+
+          <v-stepper-step step="3">Ad templates</v-stepper-step>
+        </v-stepper-header>
+      </v-stepper>
+    </div>
     <div id="text">
-      <p
-        align="center"
-        justify="center"
-        class="subtitle-1 font-weight-regular mx-auto"
-      >
-        Nuevo paciente
-      </p>
       <v-img height="250" :src="require('~/static/persona-de-60.jpg')"></v-img>
       <v-card-title class="ml-0" style="padding-bottom:0px; margin-bottom: 0px">
         <v-col cols="12">
           <v-text-field
             v-model="newPatient.name"
+            outlined
             class="subtitle-1"
             color="#54CEC3"
             label="Nombre"
             placeholder="Alberto"
           >
           </v-text-field>
-        </v-col>
-      </v-card-title>
-
-      <v-card-text>
-        <v-col cols="12">
           <v-textarea
             v-model="newPatient.description"
+            outlined
             class="subtitle-1 font-weight-regular "
             color="#54CEC3"
             label="Escribe una descripción"
@@ -35,9 +42,11 @@
             placeholder="A Alberto le gusta hablar de cine , salir a dar un paseo, jugar a dominó y que le enseñen a utilizar nuevas tecnologías."
           ></v-textarea>
         </v-col>
-      </v-card-text>
+      </v-card-title>
 
-      <v-card-title class="subtitle-1">Disponibilidad:</v-card-title>
+      <v-card-title class="subtitle-1 font-weight-regular"
+        >Elige tu disponibilidad:</v-card-title
+      >
       <v-select
         id="selects"
         v-model="newPatient.dias"

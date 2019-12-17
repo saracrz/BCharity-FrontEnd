@@ -1,10 +1,10 @@
 <template>
   <div>
-    <v-row class="form mx-auto ">
-      <p class="subtitle-1 font-weight-regular mx-auto  my-2 mb-8">
+    <v-row class="form mx-auto">
+      <p class="subtitle-2 font-weight-regular mx-auto my-2 mb-8">
         Información personal
       </p>
-      <v-col cols="11" justify="center" class="mx-auto font-weight-light">
+      <v-col cols="10" justify="center" class="mx-auto font-weight-light">
         <v-avatar class=" ml-4">
           <img src="./../assets/079801.jpg" class="pic mb-10" alt="Maria" />
         </v-avatar>
@@ -15,7 +15,7 @@
           color="#54CEC3"
           class="mt-0 pt-0"
           outlined
-          label="Name"
+          label="Nombre"
           required
         ></v-text-field>
         <v-text-field
@@ -45,6 +45,7 @@
 
         <v-content>
           <v-btn
+            rounded
             align="center"
             justify="center"
             color="#54CEC3"

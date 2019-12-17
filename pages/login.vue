@@ -1,22 +1,24 @@
 <template>
-  <v-row align="center" justify="center">
-    <img width="135px" class="mx-12" :src="require('~/assets/logo-bc.png')" />
+  <v-row align="center" justify="center" class="mt-12">
     <v-col cols="10" class="col-md-4">
       <v-form ref=" caption form" lazy-validation>
         <v-card-title>
-          <h4 class="mx-auto">¡Hola de nuevo!</h4>
+          <h3 class="mx-2">¡Hola de nuevo!</h3>
         </v-card-title>
         <v-card-text>
           <v-text-field
             v-model="email"
-            class="font-weight-thin caption"
+            class="font-weight-light subtitle-1"
             label="E-mail"
             color="#54CEC3"
+            outlined
+            style="padding-bottom:0px; margin-bottom: 0px"
             :rules="[rules.required, rules.email]"
             validate-on-blur
           />
           <v-text-field
             v-model="password"
+            outlined
             class="pt-0 font-weight-thin caption"
             color="#54CEC3"
             :type="showPassword ? 'text' : 'password'"
@@ -26,10 +28,10 @@
             @click:append="showPassword = !showPassword"
           />
           <v-card-actions>
-            <v-spacer></v-spacer>
             <v-btn
               id="button-login"
               center
+              rounded
               color="#54CEC3"
               justify="align-center"
               class="mr-4 white--text"
@@ -41,7 +43,7 @@
           <p class="font-weight-light" justify="center">
             ¿Aún no tienes cuenta?
 
-            <v-btn text to="/signup" color="#54CEC3">Regístrate</v-btn>
+            <v-btn text to="/signup" color="#F2545B">Regístrate</v-btn>
           </p>
         </v-card-text>
       </v-form>
@@ -89,6 +91,5 @@ export default {
 <style scoped>
 #button-login {
   width: 300px;
-  align-content: center;
 }
 </style>

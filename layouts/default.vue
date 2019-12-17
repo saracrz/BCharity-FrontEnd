@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar :elevation="1" fixed app color="#54CEC3">
+    <v-app-bar :elevation="1" fixed app>
       <i class="fas fa-chevron-left" @click="goBack()"></i>
       <nuxt-link text to="/welcome" class="logo ml-2">
         BCharity
@@ -75,7 +75,7 @@ export default {
         },
         {
           title: 'Mensajes',
-          icon: 'mdi-android-messages',
+          icon: 'far fa-envelope',
           to: '/volunteermessages'
         },
         {

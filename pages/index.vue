@@ -2,10 +2,24 @@
   <v-row id="background" class="pt-5px">
     <v-col cols="12" class="col-md-6 ">
       <v-col cols="12" class="col-md-8">
-        <v-content id="welcome" align="center" justify="center">
-          <p class="mx-auto mr-8 mb-0">
-            Bienvenido a BCharity
-          </p>
+        <v-content
+          id="welcome"
+          style="padding:0px"
+          align="center"
+          justify="center"
+        >
+          <v-img
+            class="white--text "
+            style="padding:0px"
+            height="220px"
+            :src="require('~/assets/manos.jpg')"
+            gradient="to top right, rgba(100,115,201,.20), rgba(25,32,72,.2)"
+            ><p class="mx-auto mr-2 mb-0" style="line-height:175px">
+              ¡Bienvenido a Bcharity!
+            </p></v-img
+          >
+
+          <p class="mx-auto mr-2 mb-0"></p>
         </v-content>
         <v-content
           id="text"
@@ -14,16 +28,14 @@
           justify="center"
           style="padding: 0px"
         >
-          <p class="text subtitle-1 mx-8 my-0 mb-6 mt-0 text-center">
+          <p class="d-inline-block subtitle mx-8 my-6 mb-0 mt-12 text-center">
             Somos una organización que conecta voluntarios con pacientes
-            hospitalarios. Creemos en un mundo mejor y esperamos que nos ayudes
-            a conseguirlo.
+            hospitalarios.
           </p>
-          <v-img
-            width="140"
-            class="mx-auto "
-            :src="require('~/assets/landing.png')"
-          ></v-img>
+          <p class="d-inline-block subtitle mx-8 my-0 mb-6 mt-2 text-center">
+            Creemos en un mundo mejor y esperamos que nos ayudes a conseguirlo.
+          </p>
+
           <v-spacer></v-spacer>
         </v-content>
       </v-col>
@@ -36,10 +48,24 @@
         </p>
       </div>
       <div class="text-center">
-        <v-btn class="ma-2" text to="/login" outlined color="#54CEC3"
+        <v-btn
+          rounded
+          dark
+          min-width="125px"
+          center
+          class="my-2"
+          to="/altavoluntario"
+          color="#54CEC3"
           >Login</v-btn
         >
-        <v-btn class="ma-2" text to="/signup" outlined color="#54CEC3"
+        <v-btn
+          rounded
+          dark
+          min-width="125px"
+          center
+          class="my-2"
+          to="/altavoluntario"
+          color="#54CEC3"
           >Signup</v-btn
         >
       </div>
