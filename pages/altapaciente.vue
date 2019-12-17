@@ -1,22 +1,14 @@
 <template>
   <div>
-    <div>
-      <v-stepper alt-labels>
-        <v-stepper-header>
-          <v-stepper-step color="#54CEC3" step="1"
-            ><p>Alta Paciente</p></v-stepper-step
-          >
-
-          <v-divider></v-divider>
-
-          <v-stepper-step step="2">Ad sizes</v-stepper-step>
-
-          <v-divider></v-divider>
-
-          <v-stepper-step step="3">Ad templates</v-stepper-step>
-        </v-stepper-header>
-      </v-stepper>
-    </div>
+    <v-col cols="12">
+      <v-avatar
+        color="#54CEC3"
+        class="subheading white--text"
+        size="24"
+        v-text="step"
+      ></v-avatar>
+      Da de alta a un paciente
+    </v-col>
     <div id="text">
       <v-img height="250" :src="require('~/static/persona-de-60.jpg')"></v-img>
       <v-card-title class="ml-0" style="padding-bottom:0px; margin-bottom: 0px">
@@ -45,43 +37,46 @@
       </v-card-title>
 
       <v-card-title class="subtitle-1 font-weight-regular"
-        >Elige tu disponibilidad:</v-card-title
+        >Elige tu Disponibilidad:</v-card-title
       >
-      <v-select
-        id="selects"
-        v-model="newPatient.dias"
-        class="mx-4 font-weight-thin"
-        outlined
-        :items="dias"
-        label="Selecciona los días"
-        multiple
-      >
-        <template v-slot:selection="{ item }">
-          <v-chip>
-            <span>{{ item }}</span>
-          </v-chip>
-        </template>
-      </v-select>
-      <v-select
-        id="selects2"
-        v-model="newPatient.horario"
-        :items="horarios"
-        label="Horario"
-        outlined
-        class="mx-4 my-0 pt-0"
-      ></v-select>
-      <v-card-actions>
-        <v-spacer></v-spacer>
-        <v-btn
-          id="button-voluntarios"
-          center
-          color="#54CEC3"
-          justify="align-center"
-          class="mx-auto mr-8 my-6 white--text"
-          @click="saveQuery()"
-          >Ver Voluntarios</v-btn
+      <v-col cols="12">
+        <v-select
+          id="selects"
+          v-model="newPatient.dias"
+          class="mx-4 font-weight-thin"
+          outlined
+          :items="dias"
+          label="Selecciona los días"
+          multiple
         >
-      </v-card-actions>
+          <template v-slot:selection="{ item }">
+            <v-chip>
+              <span>{{ item }}</span>
+            </v-chip>
+          </template>
+        </v-select>
+        <v-select
+          id="selects2"
+          v-model="newPatient.horario"
+          :items="horarios"
+          label="Horario"
+          outlined
+          class="mx-4 my-0 pt-0"
+        ></v-select>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn
+            id="button-voluntarios"
+            center
+            rounded
+            color="#54CEC3"
+            justify="align-center"
+            class="mx-auto mr-10 my-6 white--text"
+            @click="saveQuery()"
+            >Ver Voluntarios</v-btn
+          >
+        </v-card-actions>
+      </v-col>
     </div>
   </div>
 </template>
@@ -92,6 +87,7 @@ import { mapGetters } from 'vuex'
 
 export default {
   data: () => ({
+    step: '1',
     newPatient: {
       name: 'Alberto',
       description:

@@ -3,9 +3,9 @@
     <p
       align="center"
       justify="center"
-      class="subtitle-1 font-weight-regular mx-auto"
+      class="subtitle-1 font-weight-regular mt-2 mx-auto"
     >
-      Nuevo paciente
+      Da de alta a un voluntario
     </p>
     <v-col cols="12" sm="8">
       <v-img
@@ -16,6 +16,7 @@
       <v-img v-if="clicked" height="250" :src="newVolunteer.photoURL"></v-img>
       <v-file-input
         class="mt-10"
+        outlined
         accept="image/png, image/jpeg, image/bmp"
         placeholder="Sube tu imagen"
         prepend-icon="mdi-camera"
@@ -29,6 +30,7 @@
         <v-col cols="12" sm="12">
           <v-textarea
             v-model="newVolunteer.description"
+            outlined
             color="#54CEC3"
             label="Descripción"
             placeholder="Cuenta a los pacientes más sobre ti"
