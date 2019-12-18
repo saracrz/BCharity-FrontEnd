@@ -11,7 +11,7 @@
           class="white--text "
           style="padding:0px"
           height="220px"
-          :src="require('~/assets/manos.jpg')"
+          :src="require('~/assets/voluntarios.jpg')"
           gradient="to top right, rgba(100,115,201,.20), rgba(25,32,72,.2)"
           ><p class="mx-auto mr-2 mb-0" style="line-height:175px">
             ¡Bienvenido a Bcharity!
@@ -69,15 +69,15 @@ import { mapGetters } from 'vuex'
 export default {
   computed: {
     ...mapGetters(['userName', 'getRole'])
-  },
-  created() {
-    setTimeout(() => {
-      console.log(this.getRole)
-      if (this.getRole === 'Voluntario') {
-        this.$router.push('/volunteermessages')
-      }
-    }, 0)
   }
+  // created() {
+  //   setTimeout(() => {
+  //     console.log(this.getRole)
+  //     if (this.getRole === 'Voluntario') {
+  //       this.$router.push('/')
+  //     }
+  //   }, 0)
+  // }
 }
 </script>
 
